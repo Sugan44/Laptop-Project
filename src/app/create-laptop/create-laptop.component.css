@@ -1,0 +1,19 @@
+html {
+    background-image: url("src\app\bg.webp");
+}
+.fullpage{
+    text-align: center;
+    width: 80%;
+}
+.form {
+    height: 300px;
+    padding-top:30px;
+    
+   
+}
+
+button{
+    border-radius: 8px;
+    width: 60px;
+    background-color: greenyellow;
+}

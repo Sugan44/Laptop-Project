@@ -1,0 +1,35 @@
+<html>
+    <body>
+<div class="fullpage">
+    <h3>Update Laptop</h3>
+    <hr />
+    <div>
+        <form (ngSubmit) ="onUpdate()" class="form">
+            <div>
+                <label>Brand: </label>
+                <input type="text"  placeholder="Enter Brand"  id="brand" class="form-control" [(ngModel)]="laptop.brand" name="brand">
+            </div>
+            <br>
+            <div>
+                <label>Price: </label>
+                <input type="text"  placeholder="Enter Price"  id="price" class="form-control" [(ngModel)]="laptop.price" name="price">
+            </div>
+            <br>
+            <div>
+                <label>Ram: </label>
+                <input type="text"  placeholder="Enter Ram"  id="ram" class="form-control" [(ngModel)]="laptop.ram" name="ram">
+            </div>
+            <br>
+            <div>
+                <label>Colour: </label>
+                <input type="text"  placeholder="Enter Colour"  id="colour" class="form-control" [(ngModel)]="laptop.colour" name="colour">
+            </div>
+            <br>
+            <button type="submit"> UPDATE </button>
+
+        </form>
+    </div>
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+table{
+   margin: auto;
+   border: 1px solid black;
+}
+td,th{
+    padding: 5px;
+}
+tr:nth-child(even) {
+    background-color: whitesmoke;
+}
+thead{
+    text-align: center;
+    color: blue;
+}
+#view{
+    background-color: rgb(140, 140, 247);
+}
+#update{
+    background-color: limegreen;
+}
+#delete{
+    background-color: red;
+}

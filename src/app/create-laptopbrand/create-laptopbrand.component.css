@@ -7,16 +7,15 @@ form{
     margin-left: 10px;
     border-radius: 20px;
     margin: auto;
-    box-shadow: 5px 5px 3px 3px #66FCF1; 
+    box-shadow: 5px 5px 3px 3px #66FCF1;
 }
-.r1{
-    margin-top: 10px;
-   }
-.fullpage{
-    background-color: white;
-    height: 660px;
-         }
+
+#status{
+    margin-left: 20px;
+    size: 3em;
+}
 .imagediv{
-    margin-left: 500px;
+    margin-left: 470px;
     font-weight: bolder;
-         }
+}
+

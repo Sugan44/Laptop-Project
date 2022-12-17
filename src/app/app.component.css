@@ -1,0 +1,10 @@
+.headerbar{ 
+    background-color: #66FCF1;
+    color: aliceblue; }
+
+.Sidebar{
+    background-color: #45A29E;
+    width: 200px;
+    height: 660px;
+    float: left;
+}

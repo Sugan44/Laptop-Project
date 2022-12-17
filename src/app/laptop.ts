@@ -1,3 +1,5 @@
+import { LaptopBrand } from "./laptopbrand";
+
 export class Laptop{
 
     id:number;
@@ -5,6 +7,8 @@ export class Laptop{
     price:number;
     ram:number;
     colour:string;
-
+    brandCode:string;
+    brandKey:string;
+    laptopBrand:LaptopBrand;
 
 }

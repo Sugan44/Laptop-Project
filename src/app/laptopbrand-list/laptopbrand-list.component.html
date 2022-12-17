@@ -1,0 +1,35 @@
+<html>
+<head>
+    
+</head>
+<body>
+<div>
+    <h3> LAPTOP BRAND LIST</h3>
+</div>
+<table>
+    <thead> 
+        <tr> 
+            <td> ID  </td>
+            <td> BRAND NAME </td>
+            <td> BRAND CODE </td>
+            <td> STATUS </td> 
+            <td> ACTION </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let laptopbrand of laptopbrand">
+            <td> {{ laptopbrand.id}} </td>
+            <td> {{ laptopbrand.brandName}} </td>
+            <td> {{ laptopbrand.brandCode}} </td>
+            <td> {{ laptopbrand.status}} </td>
+            <td> 
+                <button (click)="view(laptopbrand.id)" id="view"> View </button>
+               <button (click)="updateById(laptopbrand.id)" id="update"> Update </button> 
+                <button (click)="deleteById(laptopbrand.id)" id="delete"> Delete </button> 
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
+

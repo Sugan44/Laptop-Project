@@ -1,6 +1,7 @@
 table{
    margin: auto;
-   border: 1px solid black;
+   border: 1px solid  #45A29E;
+   box-shadow: 10px 10px 5px  #45A29E;
 }
 td,th{
     padding: 5px;
@@ -20,4 +21,29 @@ thead{
 }
 #delete{
     background-color: red;
+}
+.emptylist{
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+.pagination{
+    margin-left: 590px;
+    margin-top: 10px;
+    
+    
+    padding-top: 10px;
+}
+.search{
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid  #45A29E;
+}
+.searchdiv{
+    margin-left: 780px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+.pag{
+    height: 25px; 
 }

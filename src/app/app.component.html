@@ -1,13 +1,31 @@
-<nav>
-  <ul>
-    <li>
-      <a routerLink="create-laptop" routerLinkActivate="activate"> ADD LAPTOP</a>
-    </li>
-    <li>
-       <a routerLink="laptop-list" routerLinkActivate="activate"> LAPTOP LIST</a>
-    </li>
-  </ul>
-</nav>
+<div class="headerbar">
+  <nav class="navbar navbar-expand-lg ">
+      <div class="container-fluid">
+        <a class="navbar-brand">  {{'SUPREME COMPUTERS' }} </a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link "  >Home</a>
+            <a class="nav-link" >Features</a>
+            <a class="nav-link" >Pricing</a>
+            <a class="nav-link">Disabled</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <nav class="nav flex-column Sidebar">
+    <a class="nav-link" style="color: black ;" routerLink="create-laptop"> Add Laptop </a>
+    <a class="nav-link" style="color: black ;" routerLink="laptop-list"> Laptop List </a>
+    <a class="nav-link" style="color: black ;" routerLink="inactive-laptos"> Inactive Laptops </a>
+    <hr>
+    <a class="nav-link" style="color: black ;" routerLink="create-laptopbrand"> Add Brand </a>
+    <a class="nav-link" style="color: black ;" routerLink="laptopbrand-list"> Brand List </a>
+    <hr> 
+  </nav>
+      
+
 <div>
   <router-outlet></router-outlet>
 </div>
+<ng-confirm></ng-confirm>

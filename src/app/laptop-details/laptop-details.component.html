@@ -4,28 +4,32 @@
     <title>Laptop Details</title>
 </head>
 <body>
-    <div>
-        <h3> Laptop Details Screen : </h3>
-    </div>
-    <div>
+    <div class="all"> 
+    
+    <div class="container" id="content" #content>
         <div>
-            <label for=""> ID : </label> {{laptop.id}}
+            <label for=""> ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </label> &nbsp;&nbsp;&nbsp;{{laptop.id}}
         </div>
         <div>
-            <label for=""> BRAND : </label> {{laptop.brand}}
+            <label for=""> BRAND &nbsp;&nbsp;: </label> &nbsp;&nbsp;&nbsp; {{laptop.brand}}
         </div>
         <div>
-            <label for=""> PRICE : </label> {{laptop.price}}
+            <label for=""> PRICE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label> &nbsp;&nbsp;&nbsp;{{laptop.price}}
         </div>
         <div>
-            <label for=""> RAM : </label> {{laptop.ram}}
+            <label for=""> RAM &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label> &nbsp;&nbsp;&nbsp; {{laptop.ram}}
         </div>
         <div>
-            <label for=""> COLOUR : </label> {{laptop.colour}}
+            <label for=""> COLOUR : </label>&nbsp;&nbsp;&nbsp; {{laptop.colour}}
         </div>
     </div>
     <br>
-    <button (click)="list()"> BACK </button>
     
+    <!--button type="button" class="btn btn-success" > Download</button-->
+    <img src="assets\Images\download buttons colors.png" width="27" (click)="makePDF()" > Click to Download..
+    <div> <br> <button (click)="list()" class="back"> BACK </button> </div>
+
+</div>
+
 </body>
 </html>

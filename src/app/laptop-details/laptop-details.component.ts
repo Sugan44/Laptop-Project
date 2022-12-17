@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Laptop } from '../laptop';
 import { LaptopService } from '../laptop.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import {jsPDF} from"jspdf";
 
 @Component({
   selector: 'app-laptop-details',
@@ -13,6 +14,7 @@ export class LaptopDetailsComponent implements OnInit {
 
   laptop:Laptop =new Laptop();
   id:number;
+  @ViewChild('content',{static:false}) el!: ElementRef;
  
   constructor(private laptopService:LaptopService,private route:Router, private activeroute: ActivatedRoute) { }
 
@@ -25,6 +27,16 @@ export class LaptopDetailsComponent implements OnInit {
 
       list() {
         this.route.navigate(['laptop-list']);
+      }
+
+
+      makePDF(){
+        let pdf = new jsPDF('p','pt','a4');
+        pdf.html(this.el.nativeElement,{
+               callback: (pdf)=>{
+            pdf.save("Laptop Details.pdf");
+          } 
+        });
       }
 
 

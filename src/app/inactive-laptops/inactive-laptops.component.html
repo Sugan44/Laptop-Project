@@ -1,0 +1,51 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+</head>
+<body> 
+<div class="searchdiv"> 
+    
+    <input type="text" [(ngModel)]="search" class="search" placeholder="Search Here">
+</div>
+<table>
+    <thead> 
+        <tr> 
+            
+            <td> ID <img src="assets\Images\refresh-reload.png" width="25" height="25" (click)="sortId()"> </td>
+            <td> BRAND <i class="fa fa-sort" (click)="sorting('brand')"> </i></td>
+            <td> PRICE <img src="assets\Images\refresh-reload.png" width="25" height="25"(click)="sortPrice()"></td>
+            <td> RAM <img src="assets\Images\refresh-reload.png" width="25" height="25" (click)="sorting('ram')" ></td> 
+            <td> COLOUR <img src="assets\Images\refresh-reload.png" width="25" height="25" (click)="sorting('colour')" ></td>
+            <td> ACTIONS </td>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr *ngFor="let lap of laptop | filter:search| orderBy:key:reverse | paginate:{itemsPerPage:noOfItem, currentPage:p}">
+            <td> {{ lap.id}} </td>
+            <td> {{ lap.laptopBrand?.brandName}} </td>
+            <td> {{ lap.price}} </td>
+            <td> {{ lap.ram}} </td>
+            <td> {{ lap.colour}} </td>
+            <td class="bt"> 
+                 <!-- <button (click)="details(lap.id)" id="view"> View </button> 
+                 <button (click)="updateId(lap.id)" id="update"> Update </button> 
+                 <button (click)="deleteId(lap.id)" id="delete"> Delete </button>  -->
+                 <button (click)="makeLaptopActive(lap.id)" id="Active" > Active </button> 
+            </td>
+            
+        </tr>
+    </tbody>
+</table>
+<div class="pagination"> 
+    <select class="pag" [(ngModel)]="noOfItem"  >
+        <option>5</option>
+        <option>10</option>
+        <option>20</option>
+    </select>
+    <pagination-controls (pageChange)="p=$event" > </pagination-controls></div>
+<div class="emptylist"> <p *ngIf="laptop.length===0"> List is Empty... No Records Found</p> </div> 
+
+</body>
+</html>

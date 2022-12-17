@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Laptop } from './laptop';
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
+import { LaptopBrand } from './laptopbrand';
 
 
 @Injectable({
@@ -9,6 +10,11 @@ import { Observable } from 'rxjs';
 })
 export class LaptopService {
   private baseUrl1="http://localhost:8080/api/laptop";
+  private baseUrl2="http://localhost:8080/api/getActiveLaptopList";
+  private baseUrl3="http://localhost:8080/api/makeLaptopInactive";
+  private baseUrl4="http://localhost:8080/api/makeLaptopActive";
+  private baseUrl5="http://localhost:8080/api/getInActiveLaptopList";
+  
   constructor(private httpClient:HttpClient) { }
 
   addlaptop(laptop:Laptop):Observable<object>{
@@ -31,4 +37,19 @@ export class LaptopService {
     return this.httpClient.put(`${this.baseUrl1}/${id}`,laptop)
   }
 
+  getActiveLaptopList():Observable<Laptop[]> {
+    return this.httpClient.get<Laptop[]> (`${this.baseUrl2}`);
+  }
+
+  getInActiveLaptopList():Observable<Laptop[]> {
+    return this.httpClient.get<Laptop[]> (`${this.baseUrl5}`);
+  }
+  
+  makeLaptopInactive(id:number):Observable<object> {
+    return this.httpClient.delete(`${this.baseUrl3}/${id}`);
+  }
+
+  makeLaptopActive(id:number):Observable<object> {
+    return this.httpClient.delete(`${this.baseUrl4}/${id}`);
+  }
 }

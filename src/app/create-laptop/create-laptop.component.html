@@ -1,33 +1,48 @@
 <html>
-    <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <body ng-app="">
 <div class="fullpage">
-    <h3>Add Laptop</h3>
-    <hr />
-    <div>
-        <form (ngSubmit) ="onSubmit()" class="form">
+   <div class="imagediv"> <img src="assets\Images\laptop.jpg" width="120"> Create New Laptop Here... </div> 
+
+    <div class="formOutside">
+        <form (ngSubmit) ="onSubmit()" class="form" >
             <div>
-                <label>Brand: </label>
-                <input type="text"  placeholder="Enter Brand"  id="brand" class="form-control" [(ngModel)]="laptop.brand" name="brand">
-            </div>
-            <br>
-            <div>
+                <label>Brand : </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                 
+                <select class="dropdown" [(ngModel)]="laptop.brandKey" name="brandKey" (change)="onSelected()">
+                    <option  value="Select" > Select Brand </option>
+                    <option *ngFor="let activebrands of activebrands" [value]="activebrands.id"> 
+                        {{activebrands.brandName}}
+                    </option>
+                </select>
+            </div> 
+            
+            <!-- <div class="r1">
+                <label>Brand Code : </label> &nbsp;&nbsp;
+                <input type="text" value={{laptop.brandCode}} [(ngModel)]="laptop.brandKey" name="brandKey" readonly>
+            </div> -->
+           
+            <div class="r1">
                 <label>Price: </label>
                 <input type="text"  placeholder="Enter Price"  id="price" class="form-control" [(ngModel)]="laptop.price" name="price">
             </div>
-            <br>
-            <div>
+           
+            <div class="r1">
                 <label>Ram: </label>
                 <input type="text"  placeholder="Enter Ram"  id="ram" class="form-control" [(ngModel)]="laptop.ram" name="ram">
             </div>
-            <br>
-            <div>
+           
+            <div class="r1">
                 <label>Colour: </label>
                 <input type="text"  placeholder="Enter Colour"  id="colour" class="form-control" [(ngModel)]="laptop.colour" name="colour">
             </div>
-            <br>
-            <button type="submit">ADD</button>
-
-        </form>
+           
+            <button type="submit" (click)="spin()" class="r1">ADD</button>
+            <ngx-spinner
+              bdColor="rgba(0, 0, 0, 1)"
+              template="<img src='assets\Images\loader.svg' />">
+            </ngx-spinner>
+         </form>
     </div>
     
 </div>

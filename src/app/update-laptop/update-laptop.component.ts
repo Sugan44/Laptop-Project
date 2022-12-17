@@ -21,7 +21,8 @@ export class UpdateLaptopComponent implements OnInit {
 
   display() {
     this.laptopService.getById(this.id).subscribe(data=> { 
-      this.laptop=data; });
+      this.laptop=data; 
+       console.log(data)});
   }
 
   onUpdate() {

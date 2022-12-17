@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title> LaptopBrand </title>
+    </head>
+    <body>
+        <div> 
+           <div class="imagediv">  <img src="assets\Images\baby-with-laptop.png" width="200" height="200"> 
+              Create a Brand Here...
+            </div>
+            <form (ngSubmit) ="onSubmitBrand()" class="form">
+                <div>
+                    <label>Brand Name : </label>
+                    <input type="text"  placeholder="Enter Brand Name"  id="brandName" class="form-control" [(ngModel)]="laptopbrand.brandName" name="brandName">
+                </div>
+                <br>
+                <div >
+                    <label>Brand Code : </label>
+                    <input type="text"  placeholder="Enter brandcode"  id="brandcode" class="form-control" [(ngModel)]="laptopbrand.brandCode" name="brandCode">
+                </div>
+                <br>
+                <div>
+                    <label> Active : </label>
+                    <input type="checkbox" id="status" [(ngModel)]="laptopbrand.status" name="status" value="true">
+                </div>
+                <br>
+                <button type="submit" > Create Brand </button> 
+            </form>
+        </div>
+
+
+    </body>
+</html>
